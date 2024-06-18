@@ -10,6 +10,66 @@
 		/*! This file is auto-generated */
 		!function (i, n) { var o, s, e; function c(e) { try { var t = { supportTests: e, timestamp: (new Date).valueOf() }; sessionStorage.setItem(o, JSON.stringify(t)) } catch (e) { } } function p(e, t, n) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data), r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data)); return t.every(function (e, t) { return e === r[t] }) } function u(e, t, n) { switch (t) { case "flag": return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !n(e, "\ud83d\udc26\u200d\u2b1b", "\ud83d\udc26\u200b\u2b1b") }return !1 } function f(e, t, n) { var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : i.createElement("canvas"), a = r.getContext("2d", { willReadFrequently: !0 }), o = (a.textBaseline = "top", a.font = "600 32px Arial", {}); return e.forEach(function (e) { o[e] = t(a, e, n) }), o } function t(e) { var t = i.createElement("script"); t.src = e, t.defer = !0, i.head.appendChild(t) } "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = { everything: !0, everythingExceptFlag: !0 }, e = new Promise(function (e) { i.addEventListener("DOMContentLoaded", e, { once: !0 }) }), new Promise(function (t) { var n = function () { try { var e = JSON.parse(sessionStorage.getItem(o)); if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests } catch (e) { } return null }(); if (!n) { if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try { var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), p.toString()].join(",") + "));", r = new Blob([e], { type: "text/javascript" }), a = new Worker(URL.createObjectURL(r), { name: "wpTestEmojiSupports" }); return void (a.onmessage = function (e) { c(n = e.data), a.terminate(), t(n) }) } catch (e) { } c(n = f(s, u, p)) } t(n) }).then(function (e) { for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]); n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () { n.DOMReady = !0 } }).then(function () { return e }).then(function () { var e; n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji))) })) }((window, document), window._wpemojiSettings);
 	</script>
+	<!-- Modal CSS -->
+    <style type="text/css">
+		.modal {
+		  display: none;
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  background-color: rgba(0, 0, 0, 0.5);
+		  z-index: 99999;
+		  border-radius: 10px;
+		}
+  
+		.mod_content {
+		  background-color: #131740;
+		  width: 400px;
+		  margin: 100px auto;
+		  padding: 40px;
+		  border-radius: 10px;
+		  text-align: center;
+		}
+  
+		/* Hide the modal when not displayed */
+		.hidden {
+		  display: none;
+		}
+  
+		#yesButton {
+		  padding: 8px 28px;
+		  margin-right: 15px;
+		  outline: none;
+		  border: none;
+		  background-color: #fff420;
+		  color: black;
+		  border-radius: 30px;
+		  cursor: pointer;
+		}
+		#noButton {
+		  padding: 8px 28px;
+		  outline: none;
+		  border: none;
+		  background-color: #fff420;
+		  color: black;
+		  border-radius: 30px;
+		  cursor: pointer;
+		}
+		.faq_inner .card-header h4 button::before {
+		  display: none !important;
+		}
+  
+		@media screen and (max-width: 768px) {
+		  .mod_content {
+			width: 95%;
+		  }
+		  .mob_space {
+			margin-top: 50px;
+		  }
+		}
+	  </style>
 	<style id='wp-emoji-styles-inline-css'>
 		img.wp-smiley,
 		img.emoji {
@@ -1397,13 +1457,84 @@
 		}
 
 		/** End Block Kit CSS: 135-3-c665d4805631b9a8bf464e65129b2f58 **/
-	</style>
+	</style>j
 </head>
 
 <body
 	class="home page-template page-template-elementor_canvas page page-id-385 exclusive-addons-elementor elementor-default elementor-template-canvas elementor-kit-6 elementor-page elementor-page-385">
 	<div data-elementor-type="wp-post" data-elementor-id="385" class="elementor elementor-385"
 		data-elementor-post-type="page">
+
+		<!-- modal section -->
+		<div id="myModal" class="modal">
+			<div class="mod_content" style="background-color: #131740">
+			  <p style="color: #fff; font-size: 17px">
+				WANNA JOIN $GRUMP
+			  </p>
+			  <div
+				style="
+				  text-align: center;
+				  margin: 0 auto;
+				  display: flex;
+				  align-items: center;
+				  justify-content: center;
+				"
+			  >
+				<img
+				  src="/images/grump.jpg"
+				  style="width: 400px; margin: 20px 0; border-radius: 10px;"
+				  alt=""
+				/>
+			  </div>
+			  <div
+				class="flex_dis"
+				style="display: flex; align-items: center; justify-content: center"
+			  >
+				<button id="yesButton">Yes</button>
+				<button id="noButton">No</button>
+			  </div>
+			</div>
+		  </div>
+		  <audio
+			style="opacity: 1"
+			id="closingAudio"
+			src="./images/music.mp3"
+		  ></audio>
+		  <script>
+			window.onload = function () {
+			  var modal = document.getElementById("myModal");
+			  modal.style.display = "block";
+	  
+			  // Close the modal when clicking outside of it
+			  window.onclick = function (event) {
+				var closeButton = document.getElementById("closeModal");
+				var closingAudio = document.getElementById("closingAudio");
+	  
+				const yesButton = document.getElementById("yesButton");
+				const noButton = document.getElementById("noButton");
+	  
+				if (yesButton) {
+				  modal.style.display = "none";
+				  closingAudio.play();
+				} else {
+				  if (noButton) {
+					modal.style.display = "none";
+					closingAudio.play();
+				  }
+				}
+	  
+				// yesButton.addEventListener("click", function () {
+				//   modal.style.display = "none";
+				//   closingAudio.play();
+				// });
+	  
+				// // Hide the modal when "No" is clicked
+				// noButton.addEventListener("click", function () {
+				//   modal.style.display = "none";
+				// });
+			  };
+			};
+		  </script>
 		<section
 			class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-7e1bda5 elementor-section-full_width elementor-section-height-default elementor-section-height-default exad-glass-effect-no exad-sticky-section-no"
 			data-id="7e1bda5" data-element_type="section" id="home"
